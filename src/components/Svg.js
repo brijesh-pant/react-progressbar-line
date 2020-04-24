@@ -2,16 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { VIEWBOX_WIDTH, VIEWBOX_HEIGHT } from '../constants'
+import { VIEWBOX_WIDTH } from '../constants'
 
 const StyledSvg = styled.svg`
   width: 100%;
   display: block;
 `
 
-const Svg = ({ children }) => {
+const Svg = ({ children, strokeWidth }) => {
   return (
-    <StyledSvg viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`}>
+    <StyledSvg viewBox={`0 0 ${VIEWBOX_WIDTH} ${strokeWidth}`}>
       {children}
     </StyledSvg>
   )

@@ -5,13 +5,15 @@ import theme from '../config/theme'
 
 import Svg from './Svg'
 import Path from './Path'
+import Text from './Text'
 
-const ProgressBarLine = ({ strokeWidth, value }) => {
+const ProgressBarLine = ({ strokeWidth, trailWidth, text, value }) => {
   return (
     <ThemeProvider theme={theme}>
-      <Svg>
-        <Path trail strokeWidth={strokeWidth} />
-        <Path value={value} strokeWidth={strokeWidth} />
+      <Text text={text} />
+      <Svg strokeWidth={strokeWidth}>
+        <Path trail strokeWidth={strokeWidth} trailWidth={trailWidth} />
+        <Path value={value} strokeWidth={strokeWidth} trailWidth={trailWidth} />
       </Svg>
     </ThemeProvider>
   )
