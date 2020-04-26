@@ -13,12 +13,13 @@ const StyledPath = styled.path`
   stroke-dashoffset: ${(props) => props.strokeDashOffset};
 `
 
-const Path = ({ strokeWidth, trail, trailWidth, value }) => {
+const Path = ({ value, min, max, strokeWidth, trail, trailWidth }) => {
   const [ref, draw, strokeDashArray, strokeDashOffset] = usePath({
+    min,
+    max,
+    value,
     strokeWidth,
-    trail,
-    trailWidth,
-    value
+    trailWidth
   })
 
   const getStrokeWidth = React.useMemo(() => {
@@ -43,8 +44,7 @@ const Path = ({ strokeWidth, trail, trailWidth, value }) => {
 Path.defaultProps = {
   strokeWidth: 2,
   trailWidth: 2,
-  trail: false,
-  value: 100
+  trail: false
 }
 
 Path.propTypes = {

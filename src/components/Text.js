@@ -8,12 +8,10 @@ const StyledText = styled.span`
   text-align: ${(props) => props.theme.text.textAlign};
 `
 
-const Text = ({ text }) => {
-  if (!text) {
-    return null
-  }
+const Text = ({ text, value }) => {
+  const renderText = text || `${Math.round(value)}%`
 
-  return <StyledText>{text}</StyledText>
+  return <StyledText>{renderText}</StyledText>
 }
 
 Text.defaultProps = {
@@ -21,7 +19,8 @@ Text.defaultProps = {
 }
 
 Text.propTypes = {
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  value: PropTypes.number
 }
 
 export default Text
