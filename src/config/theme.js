@@ -7,6 +7,10 @@ const theme = {
   trail: {
     stroke: '#d6d6d6',
     strokeLinecap: 'butt'
+  },
+  text: {
+    fill: '#01a09e',
+    textAlign: 'center'
   }
 }
 

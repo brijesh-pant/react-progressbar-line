@@ -4,17 +4,21 @@ import useStrokeDashOffset from './useStrokeDashOffset'
 
 import { VIEWBOX_X1, VIEWBOX_X2 } from '../constants'
 
-export default function useStrokeDashArray(value, strokeWidth) {
-  const [dashArray, setDashArray] = React.useState(100)
-  const [d, setD] = React.useState('')
+export default function usePath({ min, max, value, strokeWidth, trailWidth }) {
+  const [dashArray, setDashArray] = React.useState(max)
+  const [draw, setDraw] = React.useState('')
 
   React.useEffect(() => {
-    const center = strokeWidth / 2
-    setD(`
+    const center =
+      (strokeWidth > trailWidth
+        ? Math.max(strokeWidth, trailWidth)
+        : Math.min(strokeWidth, trailWidth)) / 2
+
+    setDraw(`
       M ${VIEWBOX_X1},${center}
       L ${VIEWBOX_X2},${center}
     `)
-  }, [strokeWidth])
+  }, [strokeWidth, trailWidth])
 
   const ref = React.useCallback(
     (pathEl) => {
@@ -22,7 +26,13 @@ export default function useStrokeDashArray(value, strokeWidth) {
         setDashArray(pathEl.getTotalLength())
       }
     },
-    [d]
+    [draw]
   )
-  return [ref, d, dashArray, ...useStrokeDashOffset(value, dashArray)]
+
+  return [
+    ref,
+    draw,
+    dashArray,
+    ...useStrokeDashOffset({ min, max, value, dashArray })
+  ]
 }
