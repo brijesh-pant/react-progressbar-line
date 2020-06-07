@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { VIEWBOX_X2 } from '../constants'
 
-import theme from '../config/theme'
+import baseStyles from '../config/theme'
 import { calculateSafeValue } from '../utils'
 
 import Svg from './Svg'
@@ -16,7 +16,8 @@ const ProgressBarLine = ({
   max,
   strokeWidth,
   trailWidth,
-  text
+  text,
+  styles
 }) => {
   const [value, setValue] = React.useState(max)
 
@@ -24,6 +25,8 @@ const ProgressBarLine = ({
     const safeValue = calculateSafeValue({ min, max, propValue })
     setValue(((safeValue - min) * VIEWBOX_X2) / (max - min))
   }, [propValue])
+
+  const theme = Object.assign({}, baseStyles, styles)
 
   return (
     <ThemeProvider theme={theme}>

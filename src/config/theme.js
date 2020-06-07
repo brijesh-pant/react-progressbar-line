@@ -10,7 +10,8 @@ const theme = {
   },
   text: {
     fill: '#01a09e',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontSize: '16px'
   }
 }
 
