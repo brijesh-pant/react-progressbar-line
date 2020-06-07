@@ -6,6 +6,7 @@ const StyledText = styled.span`
   color: ${(props) => props.theme.text.fill};
   display: block;
   text-align: ${(props) => props.theme.text.textAlign};
+  font-size: ${(props) => props.theme.text.fontSize};
 `
 
 const Text = ({ text, value }) => {
