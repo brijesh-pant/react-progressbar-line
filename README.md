@@ -1,6 +1,6 @@
 # react-progressbar-line
 
-> A linear progressbar component
+> A linear progressbar component. [Demo](https://brijesh-pant.github.io/react-progressbar-line/)
 
 [![NPM](https://img.shields.io/npm/v/react-progressbar-line.svg)](https://www.npmjs.com/package/react-progressbar-line) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -15,15 +15,54 @@ npm install --save react-progressbar-line
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-progressbar-line'
-import 'react-progressbar-line/dist/index.css'
+import ProgressBarLine from 'react-progressbar-line'
 
-class Example extends Component {
+class ProgressBarLineExample extends Component {
   render() {
-    return <MyComponent />
+    return (
+      <ProgressBarLine
+        value={val}
+        min={0}
+        max={100}
+        strokeWidth={5}
+        trailWidth={5}
+        styles={{
+          path: {
+            stroke: '#17b978'
+          },
+          trail: {
+            stroke: '#a7ff83'
+          },
+          text: {
+            fill: '#404040',
+            textAlign: 'center',
+            fontSize: '32px'
+          }
+        }}
+      />
+    )
   }
 }
 ```
+
+## Props
+
+| Name        | Description                                  | Default |
+| ----------- | -------------------------------------------- | ------- |
+| value       | `Value for the progress bar. Required`       | `50`    |
+| min         | `Min value for the progress bar`             | `0`     |
+| max         | `Max value for the progress bar`             | `100`   |
+| strokeWidth | `strokeWidth for the progress bar`           | `5`     |
+| trailWidth  | `trailWidth for the progress bar trail path` | `5`     |
+| text        | `Text for the progress bar`                  | `''`    |
+| styles      | `Custom styles for the progress bar`         |         |
+
+## Ideas for future development
+
+- add rtl direction with flip prop
+- add round strokeLinecap
+- add animation effects
+- update demo page with react-styleguidist
 
 ## License
 

@@ -5,7 +5,7 @@ import ProgressBarLine from './components/ProgressBarLine'
 import styles from './styles.module.css'
 
 export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+  return <div className={styles.test}>{text}</div>
 }
 
 export { ProgressBarLine }
