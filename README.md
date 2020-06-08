@@ -57,6 +57,13 @@ class ProgressBarLineExample extends Component {
 | text        | `Text for the progress bar`                  | `''`    |
 | styles      | `Custom styles for the progress bar`         |         |
 
+## Ideas for future development
+
+- add rtl direction with flip prop
+- add round strokeLinecap
+- add animation effects
+- update demo page with react-styleguidist
+
 ## License
 
 MIT © [brijesh-pant](https://github.com/brijesh-pant)
