@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 
 import { VIEWBOX_X2 } from '../constants'
@@ -50,6 +51,23 @@ const ProgressBarLine = ({
       </Svg>
     </ThemeProvider>
   )
+}
+
+ProgressBarLine.defaultProps = {
+  value: 50,
+  min: 0,
+  max: 100,
+  strokeWidth: 5,
+  trailWidth: 5
+}
+
+ProgressBarLine.propTypes = {
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.PropTypes.number])
+    .isRequired,
+  min: PropTypes.number,
+  max: PropTypes.number,
+  strokeWidth: PropTypes.number,
+  trailWidth: PropTypes.number
 }
 
 export default ProgressBarLine
