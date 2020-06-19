@@ -21,7 +21,7 @@ class ProgressBarLineExample extends Component {
   render() {
     return (
       <ProgressBarLine
-        value={val}
+        value={50}
         min={0}
         max={100}
         strokeWidth={5}
