@@ -18,6 +18,7 @@ const ProgressBarLine = ({
   strokeWidth,
   trailWidth,
   text,
+  flip,
   styles
 }) => {
   const [value, setValue] = React.useState(max)
@@ -47,6 +48,7 @@ const ProgressBarLine = ({
           max={max}
           strokeWidth={strokeWidth}
           trailWidth={trailWidth}
+          flip={flip}
         />
       </Svg>
     </ThemeProvider>

@@ -54,12 +54,12 @@ class ProgressBarLineExample extends Component {
 | max         | `Max value for the progress bar`             | `100`   |
 | strokeWidth | `strokeWidth for the progress bar`           | `5`     |
 | trailWidth  | `trailWidth for the progress bar trail path` | `5`     |
+| flip        | `Flip direction rtl horizontally`            | `false` |
 | text        | `Text for the progress bar`                  | `''`    |
 | styles      | `Custom styles for the progress bar`         |         |
 
 ## Ideas for future development
 
-- add rtl direction with flip prop
 - add round strokeLinecap
 - add animation effects
 - update demo page with react-styleguidist

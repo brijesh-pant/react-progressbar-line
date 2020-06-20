@@ -4,9 +4,19 @@ import useStrokeDashOffset from './useStrokeDashOffset'
 
 import { VIEWBOX_X1, VIEWBOX_X2 } from '../constants'
 
-export default function usePath({ min, max, value, strokeWidth, trailWidth }) {
+export default function usePath({
+  min,
+  max,
+  value,
+  strokeWidth,
+  trailWidth,
+  flip
+}) {
   const [dashArray, setDashArray] = React.useState(max)
   const [draw, setDraw] = React.useState('')
+
+  const x1 = flip ? VIEWBOX_X2 : VIEWBOX_X1
+  const x2 = flip ? VIEWBOX_X1 : VIEWBOX_X2
 
   React.useEffect(() => {
     const center =
@@ -15,8 +25,8 @@ export default function usePath({ min, max, value, strokeWidth, trailWidth }) {
         : Math.min(strokeWidth, trailWidth)) / 2
 
     setDraw(`
-      M ${VIEWBOX_X1},${center}
-      L ${VIEWBOX_X2},${center}
+      M ${x1},${center}
+      L ${x2},${center}
     `)
   }, [strokeWidth, trailWidth])
 

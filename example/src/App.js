@@ -102,6 +102,24 @@ const App = () => {
             <code>
               {`
     <ProgressBarLine
+      value={75}
+      flip
+    />`}
+            </code>
+          </pre>
+        </div>
+        <div className='half half-example'>
+          <div id='svg-container'>
+            <ProgressBarLine value={75} flip />
+          </div>
+        </div>
+      </div>
+      <div className='container'>
+        <div className='half'>
+          <pre>
+            <code>
+              {`
+    <ProgressBarLine
       text='Custom Text 😄'
     />`}
             </code>
